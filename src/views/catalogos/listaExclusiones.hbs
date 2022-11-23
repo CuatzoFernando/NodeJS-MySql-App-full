@@ -1,0 +1,39 @@
+<div class="container p-4">
+    <div class="row">
+        <table class="table table-responsive">
+            <thead>
+                <th>id_pdv</th>
+                <th>id_sku</th>
+                <th>fecha_inicio</th>
+                <th>fecha fin</th>
+                <th>Zona </th>
+                <th>Acciones</th>
+
+            </thead>
+             {{#each links}}
+             <tr>
+                 <td>{{id_pdv}}</td>
+                 <td>{{id_sku}}</td>
+                 <td>{{fecha_inicio}}</td>
+                 <td>{{fecha_fin}}</td>
+                 <td>{{zona_ventas}}</td>
+                 <td>
+                    <a href="/exclusiones/delete/{{id_pdv}}" class="btn btn-danger">borrar</a>
+                    <a href="/exclusiones/edit/{{id_pdv}}" class="btn btn-secondary">editar</a>
+
+                 </td>
+             </tr>
+           
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center ">
+                <P>no hay links guardados aun</P>
+                <a href="/clientes/add">crea uno</a>
+            </div>
+
+        </div>
+        {{/each}}
+        </table>
+       
+    </div>
+</div>

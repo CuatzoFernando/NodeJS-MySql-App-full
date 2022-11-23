@@ -1,0 +1,32 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each links}}
+           <div class="col-md-3">
+               <div class="card text-center">
+                    <div class="car-body">
+                        <div class="card-title">
+                            <a href="{{nombre_pdv}}" target="_blank">
+                                <h3 class="card-title text-uppercase">
+                                    {{nombre_pdv}}
+                                </h3>
+                            </a>
+                            <p class="m-2">{{descripcion}}</p>
+                            <p class="m-2">{{timeago created_at}} </p>
+                            <a href="/clientes/delete/{{id}}" class="btn btn-danger">borrar</a>
+                            <a href="/clientes/edit/{{id}}" class="btn btn-secondary">editar</a>
+
+                        </div>
+                    </div>
+               </div>
+           </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center ">
+                <P>no hay links guardados aun</P>
+                <a href="/clientes/add">crea uno</a>
+            </div>
+
+        </div>
+        {{/each}}
+    </div>
+</div>
